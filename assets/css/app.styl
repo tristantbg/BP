@@ -1,8 +1,1042 @@
 @import 'nib'
 @import '../../node_modules/jeet/stylus/jeet'
 @import '_mixins.styl'
+@import 'normalize.css'
+@import '../oembed/oembed.css'
+@import 'flickity.min.css'
+@import '../css/owl.carousel/owl.carousel.min.css'
+
+$tablet = 1000px
+$desktop = 1600px
+$big_desktop = 2000px
+$back_color = #fff
+$font_color = #000
+$padding = 25px
+
+$txt_desc = 2.6em;
+
+//Logo calculations
+$logo_ratio = 7/15
+$logo = 260px
+$logo_h = ($logo * $logo_ratio)
+$logo_mobile = 180px
+$logo_mobile_h = ($logo_mobile * $logo_ratio)
+$logo_desktop = ($logo*1.2)
+$logo_desktop_h = ($logo_desktop * $logo_ratio)
 
 // CSS Reset
 global-reset()
+//edit()
 
-webfont('Franklin Gothic', 'franklingothic', true, 'bold')
+webfont('BPM', 'BPM', true, 'normal')
+webfont('BPB', 'BPB', true, 'normal')
+webfont('BPMI', 'BPMI', true, 'normal')
+webfont('FM', 'FM', true, 'normal')
+
+::-webkit-scrollbar
+	display none
+
+body, html
+	width 100%
+	height 100%
+	background-color $back_color
+	padding 0
+	font-family "BPM", "Helvetica Neue", "Arial", sans-serif
+	font-smoothing()
+	text-rendering optimizeLegibility
+	font-size 62.5%
+	+below($tablet)
+		font-size 58%
+	+above($desktop)
+		font-size 64%
+	+above($big_desktop)
+		font-size 70%
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
+
+a, a:hover, a:visited, a:focus
+	color inherit
+	text-decoration none
+	//border-bottom .1em solid
+	position relative
+
+a::before, .link::before
+	content " "
+	position absolute
+	width 100%
+	height .1em
+	bottom 0
+	left 0
+	background-color $font_color
+	transition()
+	transform(scaleX(1))
+	transform-origin right
+	
+.link::before
+	bottom 20%
+
+a.thin::before, .studio a::before
+	height .1rem
+
+a:hover::before
+	transform(scaleX(0))
+	
+a.invert::before, .link::before
+	transform(scaleX(0))
+
+a.invert:hover::before
+	transform(scaleX(1))
+
+.landing_title a::before
+	transform(scaleX(0))
+	
+h1
+	font-size 4.5em
+	margin-left -.07em
+
+h3
+	font-size 2.4em
+	
+strong
+	font-family "BPB"
+
+em
+	font-family "BPMI"
+	
+button.arrow:focus
+	outline none
+	box-shadow none
+	
+div.boxclose
+	position absolute
+	top 0
+	right 0
+	cursor pointer
+	color #000
+	font-size 20px
+	font-weight bold
+	display inline-block
+	line-height 0px
+	padding $padding
+	z-index 500
+
+div.boxclose::before
+	content "×"
+	
+.loader
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	background $back_color
+	z-index 10000
+
+#spin
+	width 50px
+	height 50px
+	position absolute
+	left 50%
+	top 50%
+	margin -25px 0 0 -25px
+	background url('../images/loader.png')
+	background-size 100%
+	-webkit-animation spin 2s ease infinite
+	-moz-animation spin 2s ease infinite
+	animation spin 2s ease infinite
+    
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+	
+#site_content
+	margin-top 0
+	height 100%
+	overflow scroll
+	-webkit-overflow-scrolling touch
+	transition(margin-top, 800ms)
+
+#site_content::-webkit-scrollbar 
+	display none
+
+.studioShow #site_content
+	margin-top -100vh
+	
+section
+	background-color $back_color
+	position relative
+	z-index 10
+	+above($tablet)
+		min-height 100vh
+
+section.slide .wrap
+	opacity 0.4
+	+below($tablet)
+		opacity 1
+	//transform(rotate3d(1,0,0,60deg) scale(1.15))
+	transition(all, 500ms)
+
+.site_wrap
+	position relative
+
+section.slide.in-viewport .wrap
+	//transform(none)
+	opacity 1
+
+article.page
+	//position relative
+	width 100%
+	height auto
+	background-color $back_color
+	position relative
+	overflow hidden
+
+.landing article.page, .projects article.page
+	height 100%
+
+.row
+	padding 0 $padding
+	
+// LOGOS & MENUS
+
+.main.logo
+	z-index 1000
+	position fixed
+	top 0
+	left 0
+
+nav.main.menu
+	padding $padding 0 0 $padding
+	z-index 1000
+	position fixed
+	top 50%
+	+below($tablet)
+		top $padding
+		left initial
+		right $padding
+		font-size 2.1em
+		padding 0
+	left 0
+	font-size $txt_desc
+	li
+		height 12px
+		opacity 0
+		transition(all, 500ms)
+		//transition(opacity, 300ms)
+		transform(translateY(-25vh))
+		+below($tablet)
+			height 8px
+			transform(translateY(0))
+
+.inProject nav.main.menu .project::before, .inIndex nav.main.menu .index::before, .inStudio nav.main.menu .studio::before, .studioShow nav.main.menu .studio::before
+	transform(scaleX(1))
+
+.studioShow nav.main.menu .project::before, .studioShow nav.main.menu .index::before
+	transform(scaleX(0))
+
+nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.menu li
+	opacity 1
+	height 30px
+	transform(translateY(0))
+	cursor pointer
+	+below($tablet)
+			height 20px
+
+.logo_full, .logo_bp, .logo_dots
+	width $logo
+	pointer-events none
+	+below($tablet)
+		width $logo_mobile
+		transition(transform, 600ms)
+	+above($desktop)
+		width $logo_desktop
+	opacity 1
+	position fixed
+	top 0
+	left 0
+	padding $padding 0 0 $padding
+	z-index 1000
+
+.logo_full
+	transition(opacity, 300ms)
+	z-index 10
+
+.logo_dots
+	transform(translateX(0))
+	
+.logo.reduced .dot_top
+	transform(translateX(-47%))
+
+.logo.reduced .dot_bottom
+	transform(translateX(-23%))
+
+.logo.reduced .logo_full
+	opacity 0
+	
+// LANDING
+
+.no-video .landingVideo
+	display none
+
+#landingVisual, #landingInfos, .landingImage
+	overflow hidden
+	background-size cover
+	background-position center
+	+above($tablet)
+		//background-attachment fixed
+	
+#landingVisual
+	button.arrow
+		position absolute
+		bottom $padding
+		left 50%
+		width 50px
+		height 34px
+		border none
+		border-radius 0
+		z-index 100
+		background transparent
+		pointer initial
+		+below($tablet)
+			left $padding
+	.landing_title
+		position absolute
+		bottom $padding
+		right $padding
+		font-size $txt_desc
+		z-index 100
+
+.landingImage, .landingVideo
+	position absolute
+	width 100%
+	height 100%
+	overflow hidden
+	z-index 10
+	video
+		width 100%
+		height 100%
+		object-fit cover
+
+#landingInfos .landingVideo, #landingInfos .landingImage.blur
+	filter(blur(15px))
+	//transform(scale(1.03, 1.07))
+	//transform-origin 50%
+	//border-top 30px solid transparent
+		
+#landingInfos .landingVideo
+	+below($tablet)
+		display none
+
+#landingInfos
+	+below($tablet)
+		//background $back_color!important
+		color $font_color!important
+
+#landingText
+	width 72%
+	position absolute
+	left 14%
+	top ($logo_h+$padding)
+	font-size 2.4vw
+	line-height 1.3em
+	flowing-paragraph(1em)
+	z-index 20
+	p
+		text-align justify
+	+below($tablet)
+		width 'calc(100% - %s)' % ($padding*2)
+		top ($logo_mobile_h+$padding)
+		left $padding
+		margin-bottom ($logo_mobile_h+$padding)
+		font-size 4em!important
+
+// FEATURED
+
+$big_padding = ($padding*4)
+$padding_infos = $big_padding - 18px
+
+.no-video .gallery_cell.video_media
+	display none
+
+.flickity-prev-next-button
+	width 30px
+	height 30px
+	background transparent
+	top initial
+	bottom ($padding/2)
+
+.flickity-prev-next-button:hover
+	background transparent
+
+/* arrow color */
+.flickity-prev-next-button .arrow
+	fill $font_color
+
+.flickity-prev-next-button.no-svg
+	color $font_color
+
+/* hide disabled button */
+.flickity-prev-next-button:disabled
+	display none
+	
+.flickity-rtl .flickity-prev-next-button.next
+	//left 55px
+
+.flickity-enabled.is-draggable .flickity-viewport, .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down
+	cursor url('../images/arrow_right.png'), pointer
+
+.flickity-slider
+	height 100%
+
+.gallery
+	height 100%
+	transition()
+	opacity 0
+	transform(translateX(0))
+	.gallery_cell
+		height 100%
+		transition(opacity)
+	video
+		height 100%
+
+.flickity-enabled.gallery
+	opacity 1
+
+.gallery .slide_number
+	position absolute
+	height $big_padding+80px
+	top 0
+	right 45px
+	width 70px
+	font-size 13px
+	z-index 500
+	text-align center
+	color white
+	transition(right)
+	//mix-blend-mode difference
+	+below($tablet)
+		display none
+	.inner
+		position absolute
+		top 49%
+		left 50%
+		transform(translate(-50%,-50%))
+
+article.project .project_infos
+	width 100vw
+	height 100%
+	position relative
+	z-index 20
+	.header
+		margin $padding_infos $padding_infos 0 ($big_padding - 18)
+		position absolute
+		top 0
+		h1
+			cursor pointer
+		.date
+			margin-bottom .5em
+	.infos
+		margin 0 ($big_padding - 18) ($big_padding - 18) ($big_padding - 18)
+		position absolute
+		bottom 0
+		.summary
+			span(1/2)
+			font-size 1.8em
+			line-height 1.3em
+		.desc
+			span(1)
+			font-size $txt_desc
+			line-height 1.2em
+			text-align justify
+			flowing-paragraph(1em)
+		.tags
+			span(1)
+			font-family "FM"
+			font-size 1.8em
+			text-align right
+			text-transform capitalize
+			li
+				display inline-block
+			li:after
+				content ' / '
+			li:last-child:after
+				content ''
+		hr
+			border  none
+			height 2px
+			margin 25px 0
+			background black
+
+article.project .gallery_cell .project_infos
+	font-size 1vw
+	.header
+		margin 120px ($padding*2) 0
+	.infos
+		margin 0 ($padding*2) 70px
+	+above($tablet)
+		display none
+	+landscape()
+		display none
+
+article.project .tab.project_infos
+	position absolute
+	right 0
+	width 43%
+	height 100%
+	background-color rgba(255,255,255,0.3)
+	transition()
+	transform(translateX(calc(100% - 45px)))
+	+below($tablet)
+		display none
+	+above($desktop)
+		width 33%
+	.opener
+		height $big_padding+80px
+		width 45px
+		position absolute
+		top 0
+		left 0
+		border-bottom 1px solid #fff
+		cursor pointer
+		transition(border-bottom)
+		+below($tablet)
+			right initial
+			left 0
+		svg
+			transition(fill)
+			fill #fff
+		button.arrow
+			position absolute
+			top 50%
+			left 10px
+			width 22px
+			height 22px
+			border none
+			border-radius 0
+			background transparent
+			transform(translateY(-50%) rotate(-180deg))
+			transition(transform)
+
+article.project.start
+	.slide_number
+		right 0
+	.gallery
+		transform(translateX(-43%))
+		+below($tablet)
+			transform(translateX(0))
+		+above($desktop)
+			transform(translateX(-33%))
+			
+article.project.openInfo
+	.project_infos
+		transform(translateX(0))
+		background-color rgba(255,255,255,0.9)
+		.opener
+			border-bottom 1px solid #000
+			+below($tablet)
+				right 0
+				left initial
+			svg
+				fill #000
+			button.arrow
+				transform(translateY(-50%) rotate(0deg))
+
+// INDEX
+
+section.index
+	padding ($logo_h + $padding - (17 + 40)) 0
+	+below($tablet)
+		padding 100px 0 $padding
+	+above($desktop)
+		padding-top ($logo_desktop_h + $padding - (17 + 40))
+	.container
+		overflow hidden
+		padding 0 $padding 0 ($logo/2+10px)
+		+below($tablet)
+			padding 0 $padding $padding $padding
+		+above($desktop)
+			padding 0 $padding ($logo_desktop_h + $padding) ($logo_desktop/2+10px)
+	ul.mode_selector
+		text-align right
+		margin-bottom 40px
+		+below($tablet)
+			margin-bottom 20px
+		li
+			display inline-block
+			width 17px
+			height 17px
+			margin-left 9px
+			background-size 100% 100%
+			opacity 0.3
+			cursor pointer
+		li.image_mode
+			background-image url('../images/image_mode.svg')
+		li.text_mode
+			background-image url('../images/text_mode.svg')
+	article
+		border-bottom 1px solid
+		overflow hidden
+	article:first-of-type
+		border-top 1px solid
+	.year
+		span()
+		width 60px
+		margin-right 10px
+		padding-top $padding
+		font-size 3.6em
+		+below($tablet)
+			font-size 2.6em
+			font-family "BPB"
+			padding 20px 0
+		span:after
+			content ' '
+			background $font_color
+			width 2px
+			height 15px
+			position absolute
+			margin-left 10px
+			margin-top 5px
+			+below($tablet)
+				margin-top 1px
+	.projects
+		span()
+		width calc(100% - 70px)
+		position relative
+		+below($tablet)
+			display none
+	.project
+		span(1/10)
+		width 16vw
+		height 8vh
+		position relative
+		overflow hidden
+		padding 2% 2% 2%
+		cursor pointer
+		+below($tablet)
+			width 50%
+			padding 20px 0 4em 0
+		.index_thumb
+			width 100%
+			height 100%
+			position absolute
+			top 0
+			left 0
+			background-size cover
+			background-position center
+			transition(opacity)
+		.index_title
+			transition(opacity)
+			font-size 2.3em
+			line-height 1.2em
+			+below($tablet)
+				padding-left 1em
+	.project:nth-of-type(4n+5)::before
+		content " "
+		background $font_color
+		height 1px
+		width 15px
+		position absolute
+		top 0
+		left 8%
+		+below($tablet)
+			content ""
+			height 0
+
+section.index.text-mode
+	ul.mode_selector li.text_mode
+		opacity 1
+	.project
+		.index_title
+			opacity 1
+		.index_thumb
+			opacity 0
+	.project:hover
+		.index_thumb
+			opacity 1
+		.index_title
+			opacity 0
+
+section.index.image-mode
+	ul.mode_selector li.image_mode
+		opacity 1
+	.project
+		.index_title
+			opacity 0
+		.index_thumb
+			opacity 1
+			z-index -1
+	.project:hover
+		.index_thumb
+			opacity 0.3
+		.index_title
+			opacity 1
+	
+
+//AJAX LOAD
+
+$carrousel = 80vh;
+
+
+
+section.index
+	.ajax_display
+		span(1)
+		transition()
+		position relative
+		opacity 0
+		height 0
+		overflow hidden
+	.ajax_display.displayed
+		opacity 1
+		height $carrousel
+		border-bottom 2px solid
+		border-top 1px solid
+		+below($tablet)
+			height auto
+
+.ajax_display
+	.owl-carousel
+		span(7/13)
+		+below($tablet)
+			stack()
+		+above($desktop)
+			width calc(100% - 580px)
+		.cell
+			height $carrousel
+			background-size contain
+			background-repeat no-repeat
+			background-position center
+			cursor url('../images/arrow_right.png'), pointer
+			+below($tablet)
+				height 500px
+		.video_media .boxclose
+			transition()
+			opacity 0
+			color $back_color
+			text-shadow 1px 1px rgba(0,0,0,0.5), -1px -1px rgba(0,0,0,0.5)
+			background transparent
+			z-index 100
+		.owl-video-playing .video_media .boxclose
+			opacity 1
+		.owl-video-tn
+			background-color $back_color
+		.owl-item
+			opacity 0
+			transition(opacity, 700ms)
+		.owl-item.active, .owl-item.owl-video-playing, .owl-item.cloned
+			opacity 1
+	.project_infos
+		span(6/13)
+		height $carrousel
+		background-color $back_color
+		position relative
+		z-index 20
+		+below($tablet)
+			width 100%
+			height auto
+			stack()
+			border-top 2px solid
+		+above($desktop)
+			width 580px
+		.header
+			margin $padding+$padding
+			position absolute
+			top 0
+			+below($tablet)
+				position initial
+				float left
+				margin $padding+$padding
+			.date
+				margin-bottom .5em
+		.infos
+			margin 0 $padding+$padding $padding+$padding
+			position absolute
+			bottom 0
+			+below($tablet)
+				position initial
+				float left
+				margin $padding+$padding
+			.summary
+				span(1/2)
+				font-size 1.8em
+				line-height 1.3em
+			.desc
+				span(1)
+				font-size 2.2em
+				line-height 1.2em
+				text-align justify
+				flowing-paragraph(1em)
+			.tags
+				span(1)
+				font-family "FM"
+				font-size 1.8em
+				text-align right
+				text-transform capitalize
+				li
+					display inline-block
+				li:after
+					content ' / '
+				li:last-child:after
+					content ''
+			hr
+				height 1px
+				border none
+				margin 25px 0
+				background black
+	.boxclose
+		+below($tablet)
+			display none
+				
+
+
+// STUDIO
+
+section.studio .inner
+	padding ($logo_h + $padding * 2) 0 $padding 0
+	+below($tablet)
+		padding ($logo_mobile_h + $padding + 20px) 0 $padding 0
+	h1, h2
+		font-size 2.8em
+		font-family 'BPB'
+		margin-bottom $padding
+		+below($tablet)
+			font-size 3.5em
+	p
+		font-size 2.8em
+		margin-bottom 1em
+		margin-left -.07em
+		+below($tablet)
+			font-size 3.7em
+	p:last-child
+		margin-bottom 0
+	.container
+		overflow hidden
+		padding 0 ($logo/3) 0 ($logo/2+10px)
+		+below($tablet)
+			margin-top 0
+			padding 0 $padding $padding $padding
+		+above($desktop)
+			padding 0 ($logo_desktop/3) 0 (3*$logo_desktop/4)
+	.box
+		margin-bottom $padding
+	.top, .bottom
+		span(1)
+		margin-bottom $padding
+	.top .left
+		+above($tablet)
+			display flex
+			flex-flow row nowwrap
+			align-items flex-end
+	.left
+		span(2/12)
+		height 100%
+		+below($tablet)
+			stack()
+	.right
+		span(7/11, offset:1/11)
+		cursor url('../images/arrow_right.png'), pointer
+		+below($tablet)
+			stack()
+		+above($desktop)
+			span(6.5/11, offset:1/11)
+	.contact
+		span(1)
+	.jobs
+		span(1)
+		ul > li
+			h1
+				font-family "BPM"
+				margin-bottom .3em
+				cursor pointer
+		ul > li.selected
+			a::before
+				transform(scaleX(1))
+	.social
+		span(1)
+		padding 1em 0
+		border-top 1px solid
+		border-bottom 1px solid
+		+above($tablet)
+			border none
+		li
+			//font-family 'BPB'
+			font-size 1.8em
+			text-transform uppercase
+			padding .2em 0
+			display inline-block
+			width 100px
+			+below($tablet)
+				font-size 2.3em
+				padding .6em 0
+	.studio_description
+		span(1)
+		p
+			text-align justify
+			font-size 3.8em
+			+above($desktop)
+				font-size 4.8em
+	.recent_clients
+		span(1/3)
+		+below($tablet)
+			span(11/12, offset: 1/12)
+		a::before
+			width 0	
+		span
+			font-size 2.4em
+			display block
+			line-height 1.2em
+			+below($tablet)
+				display inline
+		+below($tablet)
+			span::after
+				content ', '
+			span:last-child::after
+				content '.'
+		+between($tablet,$big_desktop)
+			span:nth-child(n+12)
+				display none
+			
+section.studio
+	background none
+	+below($tablet)
+		height auto!important
+		background-size cover
+	+above($tablet)
+		background-image none!important
+	.contact, .social, .container .right
+		transition(opacity)
+		opacity 1
+	.gallery
+		height 66vh
+		width 50%
+		position absolute
+		bottom $padding
+		right $padding
+		z-index -1
+		+below($tablet)
+			display none
+	.gallery:hover
+		z-index 100
+	.gallery .gallery_cell
+		height 66vh
+		width 100%
+		background-size cover
+		background-position center
+
+section.studio::after
+	+below($tablet)
+		content " "
+		width 100%
+		height 100%
+		position absolute
+		z-index -1
+		top 0
+		left 0
+		background -webkit-linear-gradient(bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 60%)
+		background -moz-linear-gradient(bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 60%)
+		background linear-gradient(bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 60%)
+
+.studioShow section.studio
+	+above($tablet)
+		position fixed
+		overflow hidden
+		top 0
+		z-index 0
+		.wrap
+			opacity 1
+	+below($tablet)
+		overflow scroll
+
+// JOBS
+
+section.studio .job_container
+	transition(opacity)
+	opacity 0
+	visibility hidden
+	width 50%
+	height 100%
+	position absolute
+	right 0
+	top 0
+	overflow-y scroll
+	background rgba(255,255,255,0.97)
+	border-left 6px solid
+	z-index 100
+	+below($tablet)
+		width 100%
+		position fixed
+		z-index 2000
+	.boxclose
+		+below($tablet)
+			top 100px
+	.job
+		display none
+		padding 0 $padding+$padding
+		+below($tablet)
+			padding 0 $padding
+	h1
+		font-family 'BPM'
+		font-size 2.3rem
+	h2
+		text-transform uppercase
+		text-decoration underline
+	h3
+		font-size 1.9em
+	p, h2
+		font-size 2.1em
+		line-height 1.3em
+		margin-bottom .5em
+	.header
+		span(1)
+		margin-top $padding+$padding
+		margin-bottom $padding
+		+below($tablet)
+			margin-top ($logo_mobile_h + $padding + 20px)
+		.date
+			margin-bottom $padding
+	.infos
+		span(1)
+		margin-bottom $padding
+		.left, .right
+			col(1/2)
+			padding ($padding/2) 0
+			+below($tablet)
+				stack()
+		.left
+			border-top 2px solid
+			border-bottom 2px solid
+			+below($tablet)
+				border none
+	.job_content
+		span(1)
+		margin-bottom $padding+$padding
+		.description
+			col(1/2)
+			text-align justify
+			+below($tablet)
+				stack()
+				padding $padding 0
+				margin-bottom $padding
+				border-top 2px solid
+				border-bottom 2px solid
+			p
+				font-size 2.4em
+				+above($desktop)
+					font-size 2.8em
+		.skills
+			col(1/2)
+			+below($tablet)
+				stack()
+	.job.selected
+		display block
+
+section.studio.job_open
+	.job_container
+		opacity 1
+		visibility visible
+	.contact, .social, .container .right
+		opacity 0.2
+
+
+

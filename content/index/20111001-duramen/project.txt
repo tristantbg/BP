@@ -1,0 +1,51 @@
+Title: Duramen
+
+----
+
+Date: 2011-10-01
+
+----
+
+Client: Studio Exhibition
+
+----
+
+Categories: design,photography,production
+
+----
+
+Infos: 
+
+Design – Photography – Production for studio exhibition. 
+*October 2011, Paris*
+
+----
+
+Indexthumb: duramen-4.jpg
+
+----
+
+Description: "*Duramen*" is a series of handmade wooden sculptures.Born of a simple impulse, the one to break with conventional ways of exhibiting, we imagined a series of frames so strongly modified that they become unrecognisable. Our wish was to break from the traditional properties of the material. The choice of noble materials (*Oak, Fir, Wenge, Pear, and Linden*) and our quest for pushing their boundaries enabled us to position ourselves on the razor’s edge between two opposites - that of the deformed and that of the elegant, the instinctive and thoughtful. The photography anthology "*Natures Mortes*" narrates photographic games where set design is put up against the stereotypes of product photography. These mises-en-scene modify the primary use of the photographed object by changing its material, properties, contents, and environment. These games, which can be categorised as nonsensical, are rendered sacred by an image worthy of a luxury product shoot, with a wealth of background materials, simplicity of decor, and light forming a low-key environment. The photographic series places us between the idolatry and the futility of objects of everyday life.
+
+----
+
+Medias: 
+
+- 
+  imagefile: duramen-1.jpg
+  _fieldset: image
+- 
+  imagefile: duramen-2.jpg
+  _fieldset: image
+- 
+  imagefile: duramen-3.jpg
+  _fieldset: image
+- 
+  imagefile: duramen-4.jpg
+  _fieldset: image
+- 
+  imagefile: duramen-5.jpg
+  _fieldset: image
+- 
+  imagefile: duramen.jpg
+  _fieldset: image

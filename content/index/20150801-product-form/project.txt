@@ -1,0 +1,47 @@
+Title: Product + Form
+
+----
+
+Date: 2015-08-01
+
+----
+
+Client: Frame Magazine
+
+----
+
+Categories: photography,concept,design
+
+----
+
+Infos: 
+
+Concept – Design – Photography for magazine editorial. 
+*August 2015, Paris - Amsterdam*
+
+----
+
+Indexthumb: frame-thumbnail.jpg
+
+----
+
+Description: 
+
+The concept was based on disruptive design and the process of product and form. 
+Three visuals explore the construction of 
+a product from idea to 2D sketch to 3D form, as well as the remaining memory 
+we retain after experiencing the end result.
+
+----
+
+Medias: 
+
+- 
+  imagefile: frame-1.jpg
+  _fieldset: image
+- 
+  imagefile: frame-2.jpg
+  _fieldset: image
+- 
+  imagefile: frame.jpg
+  _fieldset: image

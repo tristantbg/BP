@@ -1,0 +1,27 @@
+Title: Featured
+
+----
+
+Featuredprojects: 
+
+- 
+  page: en-noir-x-courvoiser
+  _fieldset: project
+- 
+  page: salone-del-mobile-2013
+  _fieldset: project
+- 
+  page: byt-2013
+  _fieldset: project
+- 
+  page: nikelab-x-jfs
+  _fieldset: project
+- 
+  page: dubai-mall
+  _fieldset: project
+- 
+  page: h
+  _fieldset: project
+- 
+  page: sid-lee-nyc
+  _fieldset: project

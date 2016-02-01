@@ -1,0 +1,54 @@
+Title: SS15 Presentation
+
+----
+
+Date: 2014-10-01
+
+----
+
+Client: Sonia By
+
+----
+
+Categories: concept,design,film,production
+
+----
+
+Infos: 
+
+Concept – Design – Film – Production for SS15 Presentation. 
+*October 2014, Paris*
+
+----
+
+Indexthumb: ss-thumbnial.jpg
+
+----
+
+Description: Inspired by the underground clubs in Paris in the late 80’s, we designed a multi-storied runway made exclusively of scaffolding and fluorescent lamps. The choreography of the show was designed to coincide with the enigmatic course of metal and light. The models, synchronised by guided movements, interact with each other in this labyrinth, recalling the intertwining paths in a nightclub. Rather than being simply an objective presentation of the show, the film follows the journey of the models throughout the metallic maze, the camera swooping through the rhythms of their walk and the vibrant collection.
+
+----
+
+Medias: 
+
+- 
+  imagefile: ss15-1.jpg
+  _fieldset: image
+- 
+  imagefile: ss15-2.jpg
+  _fieldset: image
+- 
+  imagefile: ss15-3.jpg
+  _fieldset: image
+- 
+  imagefile: ss15.jpg
+  _fieldset: image
+- 
+  imagefile: sony-3.jpg
+  _fieldset: image
+- 
+  videofile: 052_sonia-rykiel_ss15_video-hd.mp4
+  videolink: https://vimeo.com/107904427
+  videoextlink: ""
+  uselink: "0"
+  _fieldset: video

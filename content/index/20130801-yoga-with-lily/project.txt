@@ -1,0 +1,54 @@
+Title: Yoga with Lily
+
+----
+
+Date: 2013-08-01
+
+----
+
+Client: i-D
+
+----
+
+Categories: set design,production
+
+----
+
+Infos: 
+
+Set Design – Production for short film. 
+*August 2013, Paris *
+
+----
+
+Indexthumb: lily-1.jpg
+
+----
+
+Description: Set in a dreamy yoga space, this short film inspired from typical fitness instructional videos, spun on their head. The set design was crafted to provide iconic representations of Lily McMenamy’s world, permeated with humour and an otherworldly perspective. Project in collaboration with ill-studio.
+
+----
+
+Medias: 
+
+- 
+  imagefile: lily-1.jpg
+  _fieldset: image
+- 
+  imagefile: lily-2.jpg
+  _fieldset: image
+- 
+  imagefile: lily-3.jpg
+  _fieldset: image
+- 
+  imagefile: lily-4.jpg
+  _fieldset: image
+- 
+  imagefile: yoga.jpg
+  _fieldset: image
+- 
+  videofile: 029_i-d_yogavideo_portfolio_video-hd.mp4
+  videolink: https://vimeo.com/129437497
+  videoextlink: ""
+  uselink: "0"
+  _fieldset: video

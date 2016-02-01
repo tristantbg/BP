@@ -1,0 +1,56 @@
+Title: Palazzo Litta
+
+----
+
+Date: 2014-10-01
+
+----
+
+Client: Krizia
+
+----
+
+Categories: concept,design,production
+
+----
+
+Infos: 
+
+Concept – Design – Production for design exhibition. 
+*October 2014, Milan*
+
+----
+
+Indexthumb: krizia-1.jpg
+
+----
+
+Description: 
+
+This installation sets out to meditate on its noble surrounding by complimenting the architecture with reflected forms. Mirrored forms punctuate the space by creating offset reflections in the background decor, an illusion only casually diminished by the passing of an individual. 
+  
+Beyond revisiting this historical context, the sculpture is our interpretation of the revival of the Krizia brand, creating something modern 
+out of the historic.
+
+----
+
+Medias: 
+
+- 
+  imagefile: krizia-1.jpg
+  _fieldset: image
+- 
+  imagefile: krizia-2.jpg
+  _fieldset: image
+- 
+  imagefile: krizia-3.jpg
+  _fieldset: image
+- 
+  imagefile: krizia.jpg
+  _fieldset: image
+- 
+  videofile: 051_krizia_litta_portfolio_video-hd.mp4
+  videolink: ""
+  videoextlink: ""
+  uselink: "0"
+  _fieldset: video

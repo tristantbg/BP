@@ -1,0 +1,60 @@
+Title: H+
+
+----
+
+Date: 2015-01-01
+
+----
+
+Client: Snatch Magazine
+
+----
+
+Categories: art direction,photography,concept,set design
+
+----
+
+Infos: 
+
+Concept – Set Design – Photography for print editorial.  
+*January 2015, Paris*
+
+----
+
+Indexthumb: tn-1.jpg
+
+----
+
+Description: 
+
+Once again taking a conceptual approach to illustrate transhumanism (*literally, an intellectual movement that aims to transform the human condition through technology*), we focused our approach on transforming a human protagonist through material and optical effects. 
+Using prisms and other experimental materials, we took an interpretive approach to the topics elicited in the magazine’s text, including cybernetics, digital identity, robotics, and other such far-flung technologies.
+
+----
+
+Medias: 
+
+- 
+  imagefile: >
+    067_snatch_shoot_portfolio_final-jpg1.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    067_snatch_shoot_portfolio_final-jpg2.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    067_snatch_shoot_portfolio_final-jpg3.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    067_snatch_shoot_portfolio_final-jpg4.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    067_snatch_shoot_portfolio_final-jpg5.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    067_snatch_shoot_portfolio_final-jpg6.jpg
+  _fieldset: image

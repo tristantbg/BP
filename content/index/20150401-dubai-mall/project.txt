@@ -1,0 +1,51 @@
+Title: Dubaï Mall
+
+----
+
+Date: 2015-04-01
+
+----
+
+Client: Hermès
+
+----
+
+Categories: concept,design,production
+
+----
+
+Infos: 
+
+Concept – Design – Production for retail window. 
+*April 2015, Dubai*
+
+----
+
+Indexthumb: hermes-d.jpg
+
+----
+
+Description: 
+
+To bring Hermès annual theme of ‘*Flaneur Forever*’ to life, we chose to focus on the notions of ‘lost time’ and hypnotic movements. Strolling is a rather typical Parisian past-time. The flaneur, an eternally aimless walker & dreamer, takes in his surroundings slowly without worrying about the concept of time. Our proposal was to create a series of simple scenes in motion, inspired by kinetic art, that encouraged the spectator to lose track of time and become a Flaneur. 
+   The graphic variations and simple physical movements intended to capture the viewer’s attention without getting lost in superfluous effects. The goal being to entrance them with these hypnotic mechanical movements, manifesting in shape-shifting cubes and moiré-infused designs. These simple structures and 3D animations kept the Hermes products centre stage, suspending them in a dream-like state.
+
+----
+
+Medias: 
+
+- 
+  imagefile: hermes-d.jpg
+  _fieldset: image
+- 
+  imagefile: hermes-d1.jpg
+  _fieldset: image
+- 
+  imagefile: hermes-d2.jpg
+  _fieldset: image
+- 
+  imagefile: hermes-d3.jpg
+  _fieldset: image
+- 
+  imagefile: hermes-d4.jpg
+  _fieldset: image

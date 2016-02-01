@@ -1,0 +1,64 @@
+Title: BYT 2013
+
+----
+
+Date: 2013-07-01
+
+----
+
+Client: Selfridges
+
+----
+
+Categories: design,concept,production
+
+----
+
+Infos: 
+
+Concept – Design – Production for windows and concept store.
+*London, 2013*
+
+----
+
+Indexthumb: self-thumbnail.jpg
+
+----
+
+Description: 
+
+Our idea for the retail windows and concept store experience was to create a simple mix of ephemeral inflatable modules and timeless marble forms. These modules, inspired by structures from the 1960’s, play with the transparency and contrasting weight  of the materials. Our selection was based on two main materials: air (*encapsulated by inflatable plastic*) and white Carrera marble.
+On the one hand, inflatable plastic is a temporary material, a materialisation of the air that also refers 
+to our childhood. Marble, on the other hand, is a noble material synonymous with luxury and timelessness. This play on paradoxical properties leads us to a retro futurist aesthetic which is representative of both pop culture and luxury.
+
+----
+
+Medias: 
+
+- 
+  imagefile: bosopa_c3_20150701_011459_3_copie.jpg
+  _fieldset: image
+- 
+  imagefile: bosopa_c3_20150701_013218_4_copie.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    bosopa_c3_20150701_014225_5_detail_i_ok_copie.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    bosopa_c3_20150701_015316_5_detail_v_copie.jpg
+  _fieldset: image
+- 
+  imagefile: bosopa_c3_20150701_024752_6_copie.jpg
+  _fieldset: image
+- 
+  imagefile: bosopa_c3_20150701_025327_dsc_0671.jpg
+  _fieldset: image
+- 
+  imagefile: >
+    bosopa_c3_20150701_123943_2_detail_v_copie-2.jpg
+  _fieldset: image
+- 
+  imagefile: bosopa_c3_20150701_124331_2_copie.jpg
+  _fieldset: image

@@ -28,3 +28,17 @@ make Kirby work. For more fine-grained configuration
 of the system, please check out http://getkirby.com/docs/advanced/options
 
 */
+
+c::set('oembed.lazyvideo', true);
+c::set('autopublish.templates', array('project', 'item'));
+c::set('sitemap.exclude', array('error'));
+//c::set('cache', true);
+//c::set('thumbs.driver', 'im');
+c::set('routes', array(
+    array(
+        'pattern' => '(:all)/ajax',
+        'action'  => function($uri) {
+          tpl::load(kirby()->roots()->templates() . DS . 'ajax.php', array('uri' => $uri), false );
+        }
+    )
+));

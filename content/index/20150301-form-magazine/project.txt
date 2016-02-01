@@ -1,0 +1,52 @@
+Title: Dark Matter
+
+----
+
+Date: 2015-03-01
+
+----
+
+Client: Form Magazine
+
+----
+
+Categories: concept,photography,production
+
+----
+
+Infos: 
+
+Concept – Photography – Production for Editorial & Interview.  
+*March 2015, Paris*
+
+----
+
+Indexthumb: form-2.jpg
+
+----
+
+Description: 
+
+We focused our creative approach on a photography editorial based on the physical phenomenon of dark matter, applied to a contextual scale. Theoretically omnipresent in space, dark matter deforms our Earth-based perception of stellar objects on the other end   of our universe. 
+
+We sought to illustrate this concept by experimenting with different effects of dysmorphic perception of a body projected in an astral world.
+
+----
+
+Medias: 
+
+- 
+  imagefile: form-2.jpg
+  _fieldset: image
+- 
+  imagefile: form-3.jpg
+  _fieldset: image
+- 
+  imagefile: form.jpg
+  _fieldset: image
+- 
+  imagefile: form-4.jpg
+  _fieldset: image
+- 
+  imagefile: gif3.gif
+  _fieldset: image

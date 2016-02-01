@@ -58,3 +58,40 @@ dead-center(position)
 	left: 50%
 	transform: translate(-50%,-50%)
 
+hideselect()
+	-webkit-backface-visibility hidden
+	backface-visibility hidden
+	-webkit-user-select none
+	-moz-user-select none
+	-ms-user-select none
+	user-select none
+	-webkit-transform-style flat
+	transform-style flat
+	-webkit-tap-highlight-color transparent
+	-webkit-user-drag none
+	outline 0
+	
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	-ms-{prop} args
+	-o-{prop} args
+	{prop} args
+
+border-radius(args)
+	vendor(border-radius,args)
+
+box-shadow(args)
+	vendor(box-shadow,args)
+	
+transition(what = all,time = 300ms,easing = ease)
+	vendor(transition,what time easing)
+	
+transform(args)
+	vendor(transform,args)
+
+filter(args)
+	vendor(filter,args)
+
+box-sizing()
+	vendor(box-sizing,border-box)

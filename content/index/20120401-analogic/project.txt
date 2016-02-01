@@ -1,0 +1,48 @@
+Title: Substance
+
+----
+
+Date: 2012-04-01
+
+----
+
+Client: Amusement Magazine
+
+----
+
+Categories: concept,set design,photography
+
+----
+
+Infos: 
+
+Concept – Set Design – Photography for Print Editorial.  
+*April 2012, Paris*
+
+----
+
+Indexthumb: sub-thumbnail.jpg
+
+----
+
+Description: 
+
+This «*substance*» is a synthetic form composed of a single material (of which the composition is unknown), and a random physical reality. 
+As spectators, we are not equipped with enough information about its nature to understand its origins. It seems, however, that it is a new state of matter (solid, liquid, gas, or plasma), found in several stages of its formation by a single contradictory factor, a human being. It’s evolution is not based on any quantifiable or predictable criteria; its transition is instantaneous, reacting to any environmental or atmospheric factor. This instability does not permit a controlled utilisation of the material, rather behaving like an organism with its own prerogative and volitions.
+
+----
+
+Medias: 
+
+- 
+  imagefile: amusement.jpg
+  _fieldset: image
+- 
+  imagefile: amusement-2.jpg
+  _fieldset: image
+- 
+  imagefile: amusement-1.jpg
+  _fieldset: image
+- 
+  imagefile: amusement-4.jpg
+  _fieldset: image
