@@ -15,7 +15,7 @@ for more information: http://getkirby.com/license
 
 */
 
-c::set('license', 'put your license key here');
+c::set('license', 'K2-PERSONAL-8df69012805173a0bd725c5661bbee6e');
 
 /*
 
@@ -31,14 +31,24 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 
 c::set('oembed.lazyvideo', true);
 c::set('autopublish.templates', array('project', 'item'));
-c::set('sitemap.exclude', array('error'));
+c::set('sitemap.exclude', array('error','featured','index','studio'));
 //c::set('cache', true);
 //c::set('thumbs.driver', 'im');
+c::set('thumb.quality', 100);
 c::set('routes', array(
     array(
         'pattern' => '(:all)/ajax',
         'action'  => function($uri) {
           tpl::load(kirby()->roots()->templates() . DS . 'ajax.php', array('uri' => $uri), false );
+        }
+    ),
+    array(
+        'pattern' => 'index/(:all)',
+        'action'  => function($uri,$uid) {
+          $page = page('index/' . $uid);
+
+      		// redirect to the article or the error page
+      		go($page ? '/#!/project/'.$uri : 'error');
         }
     )
 ));

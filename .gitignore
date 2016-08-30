@@ -1,6 +1,7 @@
 .DS_Store
 Thumbs.db
-/assets/bower_components
+/assets/lib
+/content
 /node_modules
 /npm-debug.log
 /site/accounts

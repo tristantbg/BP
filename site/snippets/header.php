@@ -6,7 +6,7 @@
 
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title><?php echo $site->title()->html() ?></title>
 	<meta name="description" content="<?php echo $site->description()->html() ?>">
 	<meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
@@ -17,13 +17,13 @@
 	<?php 
 	echo css('assets/css/app.min.css');
 	?>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/jquery.gsap.min.js"></script>
 
-	<?php
-	echo js(['assets/js/app.min.js']);
+	<?php 
+	echo js('assets/js/vendor/modernizr-build.js');
 	?>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?= url('assets/js/vendor/jquery.min.js') ?>">\x3C/script>')</script>
 
 	<?php if(!$site->customcss()->empty()): ?>
 		<style type="text/css">
@@ -41,13 +41,13 @@
 	
 	<div class="main logo">
 		<div class="logo_bp">
-			<img src="<?php echo url('assets/images/logo_bp.svg') ?>" onerror="this.src='img/logo_full.png'; this.onerror=null;" alt="Bonsoir Paris">
+			<img src="<?php echo url('assets/images/logo_bp.svg') ?>" onerror="this.src='<?php echo url('assets/images/logo_bp.png') ?>'; this.onerror=null;" alt="Bonsoir Paris" width="100%">
 		</div>
 		<div class="logo_dots dot_top">
-			<img src="<?php echo url('assets/images/logo_dots_top.svg') ?>" onerror="this.src='img/logo_full.png'; this.onerror=null;" alt="Bonsoir Paris">
+			<img src="<?php echo url('assets/images/logo_dots_top.svg') ?>" onerror="this.src='<?php echo url('assets/images/logo_dots_top.png') ?>'; this.onerror=null;" alt="Bonsoir Paris" width="100%">
 		</div>
 		<div class="logo_dots dot_bottom">
-			<img src="<?php echo url('assets/images/logo_dots_bottom.svg') ?>" onerror="this.src='img/logo_full.png'; this.onerror=null;" alt="Bonsoir Paris">
+			<img src="<?php echo url('assets/images/logo_dots_bottom.svg') ?>" onerror="this.src='<?php echo url('assets/images/logo_dots_bottom.png') ?>'; this.onerror=null;" alt="Bonsoir Paris" width="100%">
 		</div>
 
 	</div>
@@ -59,6 +59,4 @@
 			<li class="link studio" data-target="page/studio">Studio</li>
 		</ul>
 	</nav>
-
-	<div id="site_content">
 	<div class="site_wrap">

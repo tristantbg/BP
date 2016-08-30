@@ -46,6 +46,15 @@ abbr(type-size, kerning)
 font-smoothing()
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	
+
+boxsizing()
+	*, *:after, *:before
+		-webkit-box-sizing border-box
+		-moz-box-sizing border-box
+		-ms-box-sizing border-box
+		-o-box-sizing border-box
+		box-sizing border-box
 
 
 // Vertical and horizontal centering, use sparingly as it degrade type integrity

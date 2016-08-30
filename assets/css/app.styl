@@ -55,6 +55,15 @@ body, html
 	-moz-box-sizing border-box
 	box-sizing border-box
 
+body
+	overflow-x hidden
+
+::selection
+	background lightgrey
+	
+::-moz-selection
+	background lightgrey
+
 a, a:hover, a:visited, a:focus
 	color inherit
 	text-decoration none
@@ -133,6 +142,12 @@ div.boxclose::before
 	background $back_color
 	z-index 10000
 
+@keyframes spin {
+  100% {
+    transform(rotate(360deg))
+  }
+}
+
 #spin
 	width 50px
 	height 50px
@@ -145,10 +160,6 @@ div.boxclose::before
 	-webkit-animation spin 2s ease infinite
 	-moz-animation spin 2s ease infinite
 	animation spin 2s ease infinite
-    
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 	
 #site_content
 	margin-top 0
@@ -171,18 +182,13 @@ section
 		min-height 100vh
 
 section.slide .wrap
-	opacity 0.4
 	+below($tablet)
 		opacity 1
 	//transform(rotate3d(1,0,0,60deg) scale(1.15))
-	transition(all, 500ms)
+	//transition(all, 500ms)
 
 .site_wrap
 	position relative
-
-section.slide.in-viewport .wrap
-	//transform(none)
-	opacity 1
 
 article.page
 	//position relative
@@ -193,7 +199,7 @@ article.page
 	overflow hidden
 
 .landing article.page, .projects article.page
-	height 100%
+	height 100vh
 
 .row
 	padding 0 $padding
@@ -245,7 +251,6 @@ nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.me
 
 .logo_full, .logo_bp, .logo_dots
 	width $logo
-	pointer-events none
 	+below($tablet)
 		width $logo_mobile
 		transition(transform, 600ms)
@@ -264,6 +269,13 @@ nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.me
 
 .logo_dots
 	transform(translateX(0))
+
+.logo_full, .logo_dot_bottom
+	pointer-events none
+
+.logo .dot_top
+	z-index 2000
+	cursor pointer
 	
 .logo.reduced .dot_top
 	transform(translateX(-47%))
@@ -284,9 +296,7 @@ nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.me
 	background-size cover
 	background-position center
 	+above($tablet)
-		//background-attachment fixed
-	
-#landingVisual
+		background-attachment fixed
 	button.arrow
 		position absolute
 		bottom $padding
@@ -300,6 +310,8 @@ nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.me
 		pointer initial
 		+below($tablet)
 			left $padding
+	
+#landingVisual
 	.landing_title
 		position absolute
 		bottom $padding
@@ -324,30 +336,34 @@ nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.me
 	//transform-origin 50%
 	//border-top 30px solid transparent
 		
-#landingInfos .landingVideo
+#landingInfos .landingVideo, #landingInfos .landingImage
 	+below($tablet)
 		display none
 
 #landingInfos
-	+below($tablet)
+	min-height 100vh
+	+below(800px)
 		//background $back_color!important
 		color $font_color!important
+		height auto!important
 
 #landingText
 	width 72%
-	position absolute
-	left 14%
-	top ($logo_h+$padding)
+	position relative
 	font-size 2.4vw
 	line-height 1.3em
 	flowing-paragraph(1em)
 	z-index 20
+	hideselect()
 	p
 		text-align justify
+	+above($tablet)
+		left 14%
+		top ($logo_h+$padding)
 	+below($tablet)
-		width 'calc(100% - %s)' % ($padding*2)
-		top ($logo_mobile_h+$padding)
-		left $padding
+		position relative
+		margin-top ($logo_mobile_h+$padding*2)
+		width 100%
 		margin-bottom ($logo_mobile_h+$padding)
 		font-size 4em!important
 
@@ -396,6 +412,7 @@ $padding_infos = $big_padding - 18px
 	transform(translateX(0))
 	.gallery_cell
 		height 100%
+		width auto
 		transition(opacity)
 	video
 		height 100%
@@ -427,7 +444,9 @@ article.project .project_infos
 	width 100vw
 	height 100%
 	position relative
-	z-index 20
+	z-index 1000
+	-webkit-backface-visibility hidden
+	backface-visibility hidden
 	.header
 		margin $padding_infos $padding_infos 0 ($big_padding - 18)
 		position absolute
@@ -482,7 +501,7 @@ article.project .gallery_cell .project_infos
 article.project .tab.project_infos
 	position absolute
 	right 0
-	width 43%
+	width 650px
 	height 100%
 	background-color rgba(255,255,255,0.3)
 	transition()
@@ -519,14 +538,34 @@ article.project .tab.project_infos
 			transition(transform)
 
 article.project.start
+	.project_infos
+		background-color rgba(255,255,255,1)
 	.slide_number
 		right 0
 	.gallery
-		transform(translateX(-43%))
+		transform(translateX(-650px))
 		+below($tablet)
 			transform(translateX(0))
 		+above($desktop)
 			transform(translateX(-33%))
+
+@media screen and ( max-height: 700px ){
+    article.project .tab.project_infos {
+    	width: 1045px;
+    }
+    
+    article.project.start .gallery {
+		-webkit-transform: translateX(-1045px);
+		   -moz-transform: translateX(-1045px);
+		    -ms-transform: translateX(-1045px);
+		     -o-transform: translateX(-1045px);
+		        transform: translateX(-1045px);
+    }
+    
+    article.project .project_infos .infos .desc {
+    	font-size: 2.3em;
+    }
+}
 			
 article.project.openInfo
 	.project_infos
@@ -549,7 +588,7 @@ section.index
 	+below($tablet)
 		padding 100px 0 $padding
 	+above($desktop)
-		padding-top ($logo_desktop_h + $padding - (17 + 40))
+		padding-top ($logo_desktop_h + $padding - (17 + 40)) 0
 	.container
 		overflow hidden
 		padding 0 $padding 0 ($logo/2+10px)
@@ -614,7 +653,7 @@ section.index
 		padding 2% 2% 2%
 		cursor pointer
 		+below($tablet)
-			width 50%
+			width 30vw
 			padding 20px 0 4em 0
 		.index_thumb
 			width 100%
@@ -898,12 +937,14 @@ section.studio .inner
 				display none
 			
 section.studio
-	background none
+	min-height 101vh
 	+below($tablet)
 		height auto!important
 		background-size cover
 	+above($tablet)
 		background-image none!important
+	.logo_full
+		opacity 0
 	.contact, .social, .container .right
 		transition(opacity)
 		opacity 1
@@ -937,16 +978,16 @@ section.studio::after
 		background -moz-linear-gradient(bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 60%)
 		background linear-gradient(bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 60%)
 
-.studioShow section.studio
-	+above($tablet)
-		position fixed
-		overflow hidden
-		top 0
-		z-index 0
-		.wrap
-			opacity 1
-	+below($tablet)
-		overflow scroll
+// .studioShow section.studio
+// 	+above($tablet)
+// 		position fixed
+// 		overflow hidden
+// 		top 0
+// 		z-index 0
+// 		.wrap
+// 			opacity 1
+// 	+below($tablet)
+// 		overflow scroll
 
 // JOBS
 

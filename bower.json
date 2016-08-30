@@ -5,6 +5,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "waypoints": "~4.0.0",
-    "hasher": "~1.2.0"
+    "hasher": "~1.2.0",
+    "lazysizes": "^1.4.0",
+    "jquery-mousewheel": "^3.1.13"
   }
 }

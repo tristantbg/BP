@@ -16,15 +16,17 @@ if(!$landing->landingvideolink()->empty() && $landing->uselink() == "1"):
 endif
 ?>
 
-<section class="slide content landing">
+<section class="slide content landing snap ss-active">
+
+<div class="wrap">
 
 	<article id="landingVisual" class="page">
 		<div class="landingImage" style="background-image: url('<?php echo $landingImage ?>');"></div>
 
 		<?php  if(isset($landingVideo)): ?>
 			<div class="landingVideo">
-				<video autoplay loop muted>
-					<source src="<?php  echo $landingVideo ?>" type="video/mp4">
+					<video autoplay loop muted>
+						<source src="<?php  echo $landingVideo ?>" type="video/mp4">
 					</video>
 				</div>
 			<?php endif ?>
@@ -47,14 +49,20 @@ endif
 			</span>
 
 	</article>
+
+	</div>
 </section>
 
-<section class="slide content landing">
-	<article id="landingInfos" class="page" style="background-image: url('<?php echo $landingImage ?>');">
+<section class="slide content landing snap">
+
+<div class="wrap">
+
+	
 
 		<?php if(!$landing->landingimageblur()->empty()) { ?>
-		<div class="landingImage" style="background-image: url('<?php echo $landingImageBlur ?>');"></div>
+		<article id="landingInfos" class="page" style="background-image: url('<?php echo $landingImageBlur ?>'); background-color: <?php echo $landing->bgcolor() ?>;">
 		<?php } else { ?>
+		<article id="landingInfos" class="page" style="background-image: url('<?php echo $landingImage ?>');">
 		<div class="landingImage blur" style="background-image: url('<?php echo $landingImage ?>');"></div>
 		<?php } ?>
 
@@ -62,8 +70,8 @@ endif
 			<div class="landingVideo">
 				<video autoplay loop muted>
 					<source src="<?php  echo $landingVideo ?>" type="video/mp4">
-					</video>
-				</div>
+				</video>
+			</div>
 			<?php endif ?>
 
 			<div class="row">
@@ -71,6 +79,13 @@ endif
 				</div>
 			</div>
 
-		</article>
+			<button class="arrow" type="button">
+				<svg version="1.1" x="0px" y="0px"
+				viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+				<polygon fill="<?php echo $landing->arrowcolor() ?>" points="50,74.6 0.9,31.7 4.9,27.2 50,66.6 95.1,27.2 99.1,31.7 "/>
+				</svg>
+			</button>
 
+		</article>
+</div>
 	</section>

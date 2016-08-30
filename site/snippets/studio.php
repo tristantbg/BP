@@ -16,8 +16,15 @@ function toUrl($title) {
 
 ?>
 
-<section id="studio" class="slide studio" style="background-image: url('<?php echo $studio->image()->url() ?>')">
+<section id="studio" class="content studio" style="background-image: url('<?php echo $studio->image()->url() ?>')">
 	<div class="wrap">
+
+	<div class="logo">
+				<div class="logo_full">
+					<img src="<?= url('assets/images/logo_full.svg') ?>" onerror="this.src='img/logo_full.png'; this.onerror=null;" alt="Bonsoir Paris" width="100%">
+				</div>
+			</div>
+
 		<div class="job_container" data-scroll-scope>
 			<?php foreach($studio->jobs()->toStructure() as $job): ?>
 				<?php if($job->_fieldset() == 'job'):?>
@@ -133,7 +140,7 @@ function toUrl($title) {
 			<?php if(!$studio->slideshow()->empty()):?>
 				<div class="gallery">
 					<?php foreach($files as $file): ?>
-						<div class="gallery_cell" style="background-image: url('<?php echo $file->url() ?>')">
+						<div class="gallery_cell lazyloaded" style="background-image: url('<?php echo $file->url() ?>')">
 						</div>
 					<?php endforeach ?>
 				</div>

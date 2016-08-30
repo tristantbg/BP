@@ -1,7 +1,9 @@
-</div>
+
 </div>
 
-<?php echo js('assets/js/vendor/hyphen.js'); ?>
+<?php
+echo js(array('assets/js/build/plugins.js', 'assets/js/build/app.min.js', 'assets/js/vendor/hyphen.js'));
+?>
 
 <?php if(!$site->googleanalytics()->empty()): ?>
   <!-- Google Analytics-->

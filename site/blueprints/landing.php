@@ -63,11 +63,16 @@ fields:
     label: Text Color
     type:  color
     default: 000000
-    width: 1/2
+    width: 1/3
+  bgcolor:
+    label: Background Color
+    type:  color
+    default: ffffff
+    width: 1/3
   txtsize:
     label: Text Size
     type:  number
     default: 2.4
     step: 0.01
     help: Font in percentage (vw units)
-    width: 1/2
+    width: 1/3

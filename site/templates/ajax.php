@@ -20,7 +20,7 @@ if(kirby()->request()->ajax()) {
 			<?php endif ?>
 			<?php if($media->_fieldset() == 'image'):?>
 				<?php if($media->imagefile()->toFile() !== null):?>
-					<div class="cell owl-lazy" data-src="<?php echo $media->imagefile()->toFile()->url() ?>" <?php echo imgsrc($media->imagefile()->toFile(), array('bgimage' => true, 'width' => 600)); ?> alt="<?php echo $project->title()->html() ?>">
+					<div class="cell owl-lazy" data-src="<?php echo thumb($media->imagefile()->toFile(), array('height' => 1000))->url() ?>" <?php echo imgsrc($media->imagefile()->toFile(), array('bgimage' => true, 'width' => 600)); ?> alt="<?php echo $project->title()->html() ?>">
 
 					</div>
 				<?php endif ?>

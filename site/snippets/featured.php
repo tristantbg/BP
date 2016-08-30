@@ -12,7 +12,7 @@ $mediafile = 0
 	<?php if($project->isVisible()): ?>
 		<?php $mediaindex = 1 ?>
 
-		<section class="slide content projects">
+		<section class="slide content projects snap">
 			<div class="wrap">
 
 				<article class="page project openInfo start" id="<?php echo $project->title()->html() ?>">
@@ -25,7 +25,7 @@ $mediafile = 0
 						<div class="header">
 							<h3 class="date"><?php echo $project->date('Y') ?></h3>
 							<h1 data-target="project/<?php echo $project->uid() ?>" href="<?php echo $project->url() . '/ajax' ?>"><?php echo $project->title()->html() ?></h1>
-							<h1><strong><?php echo $project->client()->html() ?></strong></h1>
+							<h1 data-target="project/<?php echo $project->uid() ?>" href="<?php echo $project->url() . '/ajax' ?>"><strong><?php echo $project->client()->html() ?></strong></h1>
 						</div>
 						<div class="infos">
 							<div class="summary">
@@ -53,17 +53,51 @@ $mediafile = 0
 							<?php if(s::get('device_class') != 'mobile'): ?>
 								<?php if($media->_fieldset() == 'video'):?>
 
-									<?php if(!$media->videofile()->empty() && $media->uselink() == "0") { $mediafile = $media->videofile()->toFile()->url(); }?>
-									<?php if(!$media->videoextlink()->empty() && $media->uselink() == "1") { $mediafile = $media->videoextlink()->html(); }?>
+									<?php 
+									if(!$media->videofile()->empty() && $media->uselink() == "0"): 
+										$mediafile = $media->videofile()->toFile()->url();
+									?>
 
 									<div class="gallery_cell video_media" alt="<?php echo $project->title()->html() ?>">
 										<video src="<?php echo $mediafile ?>" autoplay loop muted></video>
 									</div>
+									
+									<?php 
+									elseif(!$media->videoextlink()->empty() && $media->uselink() == "1"):
+										$mediafile = $media->videoextlink()->html(); 
+									?>
+
+									<div class="gallery_cell video_media" alt="<?php echo $project->title()->html() ?>">
+										<video src="<?php echo $mediafile ?>" autoplay loop muted></video>
+									</div>
+									
+
+									<?php endif ?>
+
+
 								<?php endif ?>
 							<?php endif ?>
 							<?php if($media->_fieldset() == 'image'):?>
 								<?php if($media->imagefile()->toFile() !== null):?>
-									<img class="gallery_cell" <?php echo imgsrc($media->imagefile()->toFile()); ?> data-flickity-lazyload="<?php echo $media->imagefile()->toFile()->url() ?>" alt="<?php echo $project->title()->html() ?>" />
+									<?php 
+									$image = $media->imagefile()->toFile();
+									$srcset = '';
+									for ($i = 600; $i <= 2100; $i += 300) {
+										if($i<2100): $srcset .= resizeOnDemand($image, $i) . ' ' . $i . 'w,';
+										else: $srcset .= $image->url() . ' ' . $i . 'w,';
+										endif;
+									}
+										?>
+									<img 
+									class="gallery_cell lazyload"
+									src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+									data-flickity-lazyload="<?php echo resizeOnDemand($image, 1000) ?>" 
+									data-srcset-flickity="<?php echo $srcset ?>" 
+									sizes="100vw"
+									alt="<?php echo $project->title()->html() ?>">
+									<noscript>
+										<img class="gallery_cell" src="<?php echo $image->url() ?>" alt="<?php echo $project->title()->html() ?>">
+									</noscript>
 								<?php endif ?>
 							<?php endif ?>
 							<?php $mediaindex++ ?>
@@ -74,8 +108,8 @@ $mediafile = 0
 								<div class="project_infos">
 									<div class="header">
 										<h3 class="date"><?php echo $project->date('Y') ?></h3>
-										<h1 data-target="<?php echo $project->uid() ?>" href="<?php echo $project->url() . '/ajax' ?>"><?php echo $project->title()->html() ?></h1>
-										<h1><strong><?php echo $project->client()->html() ?></strong></h1>
+										<h1 data-target="project/<?php echo $project->uid() ?>" href="<?php echo $project->url() . '/ajax' ?>"><?php echo $project->title()->html() ?></h1>
+										<h1 data-target="project/<?php echo $project->uid() ?>" href="<?php echo $project->url() . '/ajax' ?>"><strong><?php echo $project->client()->html() ?></strong></h1>
 									</div>
 									<div class="infos">
 										<div class="summary">

@@ -6,7 +6,7 @@ $mediafile = 0
 
 ?>
 
-<section class="slide content index text-mode">
+<section class="content index text-mode snap">
 	<div class="wrap">
 
 		<div class="container">
@@ -36,7 +36,7 @@ $mediafile = 0
 								<span class="project ajax" data-target="project/<?php echo $post->uid() ?>" href="<?php echo $post->url() . '/ajax' ?>">
 									<?php 
 									if(!$post->indexthumb()->empty()):
-										$thumbimage = $post->image($post->indexthumb())->url();
+										$thumbimage = thumb($post->image($post->indexthumb()), array('width' => 600))->url();
 									else:
 										$thumbimage = thumb($post->image(), array('width' => 600))->url();
 									endif
