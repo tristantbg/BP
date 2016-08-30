@@ -239,7 +239,7 @@ function init() {
                     prevNextButtons: true,
                     pageDots: false,
                     lazyLoad: 3,
-                    dragThreshold: 30,
+                    dragThreshold: 17,
                     wrapAround: true,
                     rightToLeft: true,
                     freeScroll: true,
