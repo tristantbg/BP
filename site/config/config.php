@@ -43,7 +43,7 @@ c::set('routes', array(
         }
     ),
     array(
-        'pattern' => 'index/(:all)',
+        'pattern' => 'index/(:any)',
         'action'  => function($uri,$uid) {
           $page = page('index/' . $uid);
 
