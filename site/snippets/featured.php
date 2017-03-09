@@ -96,7 +96,7 @@ $mediafile = 0
 									sizes="100vw"
 									alt="<?php echo $project->title()->html() ?>">
 									<noscript>
-										<img class="gallery_cell" src="<?php echo $image->url() ?>" alt="<?php echo $project->title()->html() ?>">
+										<img class="gallery_cell" src="<?php echo $image->url() ?>" alt="<?php echo $project->title()->html() ?>"/>
 									</noscript>
 								<?php endif ?>
 							<?php endif ?>

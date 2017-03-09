@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         concat: {
             plugins: {
-                src: ['assets/lib/viewport-units-buggyfill/viewport-units-buggyfill.js','assets/js/vendor/flickity.pkgd.min.js', 'assets/js/vendor/owl.carousel.min.js', 'assets/lib/jquery.snapscroll-master/core/dependencies/jquery.scroll_to.js', 'assets/lib/jquery.snapscroll-master/core/jquery.snapscroll.js','assets/lib/jquery-mousewheel/jquery.mousewheel.min.js', 'assets/lib/scroll-scope/scroll-scope.min.js', 'assets/lib/js-signals/dist/signals.min.js', 'assets/lib/hasher/dist/js/hasher.min.js','assets/lib/gsap/src/minified/TweenMax.min.js','assets/lib/gsap/src/minified/plugins/ScrollToPlugin.min.js','assets/lib/scrollmagic/scrollmagic/minified/ScrollMagic.min.js', 'assets/lib/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'],
+                src: ['assets/lib/viewport-units-buggyfill/viewport-units-buggyfill.js','assets/js/vendor/flickity.pkgd.min.js', 'assets/js/vendor/owl.carousel.min.js', 'assets/lib/jquery.snapscroll/core/dependencies/jquery.scroll_to.js', 'assets/lib/jquery.snapscroll/core/jquery.snapscroll.js','assets/lib/jquery-mousewheel/jquery.mousewheel.min.js', 'assets/lib/scroll-scope/scroll-scope.min.js', 'assets/lib/js-signals/dist/signals.min.js', 'assets/lib/hasher/dist/js/hasher.min.js','assets/lib/gsap/src/minified/TweenMax.min.js','assets/lib/gsap/src/minified/plugins/ScrollToPlugin.min.js','assets/lib/scrollmagic/scrollmagic/minified/ScrollMagic.min.js', 'assets/lib/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'],
                 dest: 'assets/js/plugins.concat.js'
             },
             js: {
