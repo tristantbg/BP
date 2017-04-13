@@ -41,7 +41,7 @@ $mediafile = 0
 										$thumbimage = thumb($post->image(), array('width' => 600))->url();
 									endif
 									?>
-									<div class="index_thumb" style="background-image: url('<?php echo $thumbimage ?>')" alt="<?php echo $post->title()->html() ?>" /></div>
+									<div class="index_thumb lazyload" data-bg="<?php echo $thumbimage ?>" alt="<?php echo $post->title()->html() ?>" /></div>
 									<div class="index_title">
 										<?php echo $post->title() ?>
 										<br>

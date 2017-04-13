@@ -241,7 +241,7 @@ nav.main.menu
 .studioShow nav.main.menu .project::before, .studioShow nav.main.menu .index::before
 	transform(scaleX(0))
 
-nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.menu li
+nav.main.menu li, nav.main.menu.is-visible li, .studioShow nav.main.menu li, .inStudio nav.main.menu li
 	opacity 1
 	height 30px
 	transform(translateY(0))
@@ -416,6 +416,18 @@ $padding_infos = $big_padding - 18px
 		transition(opacity)
 	video
 		height 100%
+	.previous-section, .next-section
+		position absolute
+		height 20vh
+		width 100%
+		z-index 10
+		left 0
+	.previous-section
+		top 0
+		cursor url('../images/arrow_top.png'), pointer
+	.next-section
+		bottom 0
+		cursor url('../images/arrow_bottom.png'), pointer
 
 .flickity-enabled.gallery
 	opacity 1

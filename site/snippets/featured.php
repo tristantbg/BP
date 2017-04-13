@@ -48,6 +48,8 @@ $mediafile = 0
 						</div>
 					</div>
 					<div class="gallery">
+					<div class="section-nav previous-section"></div>
+					<div class="section-nav next-section"></div>
 
 						<?php foreach($project->medias()->toStructure() as $media): ?>
 							<?php if(s::get('device_class') != 'mobile'): ?>

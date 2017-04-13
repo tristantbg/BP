@@ -42,13 +42,13 @@ c::set('routes', array(
           tpl::load(kirby()->roots()->templates() . DS . 'ajax.php', array('uri' => $uri), false );
         }
     ),
-    array(
-        'pattern' => 'index/(:any)',
-        'action'  => function($uri,$uid) {
-          $page = page('index/' . $uid);
+    // array(
+    //     'pattern' => 'index/(:any)',
+    //     'action'  => function($uri,$uid) {
+    //       $page = page('index/' . $uid);
 
-      		// redirect to the article or the error page
-      		go($page ? '/#!/project/'.$uri : 'error');
-        }
-    )
+    //   		// redirect to the article or the error page
+    //   		go($page ? '/#!/project/'.$uri : 'error');
+    //     }
+    // )
 ));

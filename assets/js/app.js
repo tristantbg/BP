@@ -556,12 +556,12 @@ function init() {
             scrollSpeed: 300,
             topPadding: 100
         });
-        $('.site_wrap').on('mousewheel', function(event) {
-            var dir = event.deltaY > 0 ? 'up' : 'down',
-                vel = Math.abs(event.deltaY);
+        $('.section-nav').click(function(event) {
+            event.preventDefault();
+            var dir = $(this).hasClass('previous-section') ? 'up' : 'down';
             var active_slide = $('.ss-active');
             if (!$('.ss-active').hasClass('index')) {
-                if (dir == 'up' && !isScrolling && vel > 5) {
+                if (dir == 'up' && !isScrolling) {
                     var currentS = $body.scrollTop();
                     if (!isScrolling) {
                         $(window).scrollTo(active_slide.prev(), 400);
@@ -571,7 +571,35 @@ function init() {
                         }, 500);
                     }
                 }
-                if (dir == 'down' && !isScrolling && vel > 5) {
+                if (dir == 'down' && !isScrolling) {
+                    var currentS = $body.scrollTop();
+                    if (!isScrolling) {
+                        $(window).scrollTo(active_slide.next(), 400);
+                        isScrolling = true;
+                        setTimeout(function() {
+                            isScrolling = false;
+                        }, 500);
+                    }
+                }
+                return false;
+            }
+        });
+        $('.site_wrap').on('mousewheel', function(event) {
+            var dir = event.deltaY > 0 ? 'up' : 'down',
+                vel = Math.abs(event.deltaY);
+            var active_slide = $('.ss-active');
+            if (!$('.ss-active').hasClass('index')) {
+                if (dir == 'up' && !isScrolling && vel > 10) {
+                    var currentS = $body.scrollTop();
+                    if (!isScrolling) {
+                        $(window).scrollTo(active_slide.prev(), 400);
+                        isScrolling = true;
+                        setTimeout(function() {
+                            isScrolling = false;
+                        }, 500);
+                    }
+                }
+                if (dir == 'down' && !isScrolling && vel > 10) {
                     var currentS = $body.scrollTop();
                     if (!isScrolling) {
                         $(window).scrollTo(active_slide.next(), 400);

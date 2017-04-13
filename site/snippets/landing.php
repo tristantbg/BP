@@ -60,10 +60,10 @@ endif
 	
 
 		<?php if(!$landing->landingimageblur()->empty()) { ?>
-		<article id="landingInfos" class="page" style="background-image: url('<?php echo $landingImageBlur ?>'); background-color: <?php echo $landing->bgcolor() ?>;">
+		<article id="landingInfos" class="page lazyload" data-bg="<?php echo $landingImageBlur ?>" style="background-color: <?php echo $landing->bgcolor() ?>;">
 		<?php } else { ?>
-		<article id="landingInfos" class="page" style="background-image: url('<?php echo $landingImage ?>');">
-		<div class="landingImage blur" style="background-image: url('<?php echo $landingImage ?>');"></div>
+		<article id="landingInfos lazyload" class="page" data-bg="<?php echo $landingImage ?>'">
+		<div class="landingImage blur lazyload" data-bg="<?php echo $landingImage ?>"></div>
 		<?php } ?>
 
 		<?php  if(isset($landingVideo)): ?>
